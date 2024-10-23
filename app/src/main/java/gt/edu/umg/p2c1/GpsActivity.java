@@ -1,8 +1,11 @@
 package gt.edu.umg.p2c1;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -10,16 +13,28 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
-public class GpsActivity extends AppCompatActivity { // Cambiado a GpsActivity
+public class GpsActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient fusedLocationProviderClient;
     private TextView locationTv;
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
+    Button getBtnRegresar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gps_activity); // Asegúrate de que el nombre del archivo sea correcto
+        setContentView(R.layout.gps_activity);
+
+        Button btnRegresar2 = findViewById(R.id.btnRegresar2);
+
+        btnRegresar2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(GpsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         locationTv = findViewById(R.id.locationTv);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);

@@ -18,4 +18,14 @@
         android:textSize="20sp"
         tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="398dp" />
+
+    <Button
+        android:id="@+id/btnRegresar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regrear al menu principal"
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="667dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
