@@ -87,4 +87,10 @@
         android:text="0905-23-3623"
         android:textColor="#FF5722" />
 
+    <Button
+        android:id="@+id/btn_regresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regresar a menu" />
+
 </LinearLayout>

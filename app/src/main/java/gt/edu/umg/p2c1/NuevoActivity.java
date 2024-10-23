@@ -18,6 +18,7 @@ public class NuevoActivity extends AppCompatActivity {
     EditText txtNombre, txtTelefono, txtEmail;
     Button btnGuardar;
     DbContactos dbContactos;
+    Button btn_regresar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,12 @@ public class NuevoActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this,"Error al guardar contacto", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        btn_regresar = findViewById(R.id.btn_regresar);
+
+        btn_regresar.setOnClickListener(view -> {
+            finish();
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
