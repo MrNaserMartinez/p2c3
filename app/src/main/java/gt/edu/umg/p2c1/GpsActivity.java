@@ -15,7 +15,7 @@ import com.google.android.gms.location.LocationServices;
 
 public class GpsActivity extends AppCompatActivity {
 
-    private FusedLocationProviderClient fusedLocationProviderClient;
+    private FusedLocationProviderClient fusedLocationProviderClient; //da la ubicación
     private TextView locationTv;
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
     Button getBtnRegresar2;

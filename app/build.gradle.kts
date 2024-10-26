@@ -39,6 +39,11 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.play.services.location)
 
+    implementation(libs.androidx.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

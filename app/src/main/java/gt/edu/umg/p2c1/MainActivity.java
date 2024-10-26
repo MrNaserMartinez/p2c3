@@ -17,7 +17,7 @@ import gt.edu.umg.p2c1.BaseDatos.DbHelper;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bntSaludo, btnCrearDb, btndoxeo;
+    Button bntSaludo, btnCrearDb, btndoxeo, btnselfi;
     TextView tvSaludo;
 
     @SuppressLint("MissingInflatedId")
@@ -29,32 +29,25 @@ public class MainActivity extends AppCompatActivity {
 
         bntSaludo = findViewById(R.id.btnSaludo);
         tvSaludo = findViewById(R.id.tvSaludo);
-        btnCrearDb = findViewById(R.id.btncrearDb);
-        btndoxeo = findViewById(R.id.btndoxeo); // Asegúrate de inicializar btndoxeo
+        btndoxeo = findViewById(R.id.btndoxeo);
+        btnselfi = findViewById(R.id.btnselfi); // Asegúrate de inicializar btnselfi
 
         bntSaludo.setOnClickListener(v -> {
             Toast.makeText(this, "¡Saludos!", Toast.LENGTH_SHORT).show();
-            tvSaludo.setText("Bienvenido Naser");
+            tvSaludo.setText("Bienvenido usuario nuevo");
         });
 
-        btnCrearDb.setOnClickListener(v -> {
-            // Mostrar mensaje de éxito
-            Toast.makeText(this, "¡Base de Datos Creada!", Toast.LENGTH_SHORT).show();
-            tvSaludo.setText("¡Base de datos creada con éxito!");
-
-            // Crear base de datos
-            DbHelper dbHelper = new DbHelper(this);
-            dbHelper.getWritableDatabase();
-
-            // Iniciar la nueva activity
-            Intent intent = new Intent(this, NuevoActivity.class);
-            startActivity(intent);
-        });
 
         btndoxeo.setOnClickListener(view -> {
             Intent intent = new Intent(this, GpsActivity.class);
             startActivity(intent);
             Toast.makeText(this, "¡TE DOXEO MI LOCO!", Toast.LENGTH_SHORT).show();
+        });
+
+        // Configurar btnselfi para abrir CameraActivity
+        btnselfi.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CameraActivity.class);
+            startActivity(intent);
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
